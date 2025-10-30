@@ -1,0 +1,319 @@
+.panel-container {
+  padding: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.panel-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.language-section {
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.action-section {
+  margin-top: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  /* margin-bottom: 5px; */
+}
+
+/* 打开单词本按钮样式 */
+.tool-button {
+  width: 60px;
+  padding: 2px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  /* margin: 10px 0; */
+  border: 1px solid #ddd;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #2196f3;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  font-weight: bold;
+  /* margin-bottom: 10px; */
+}
+
+.language-select-container {
+  position: relative;
+}
+
+#targetLang {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+#customLang {
+  width: calc(100% - 14px);
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.target-language {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#customLang.invalid {
+  border-color: #ff4444;
+  background-color: #fff8f8;
+}
+
+#customLang.invalid::placeholder {
+  color: #ff4444;
+}
+
+.language-select-container::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #666;
+  display: none;
+}
+
+.language-select-container:hover::after {
+  display: block;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 13px;
+  margin: 0;
+  /* min-width: 100px; */
+}
+
+#restoreOriginal {
+  background-color: #757575;
+  color: white;
+  font-size: 13px;
+  padding: 8px 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  flex: 1;
+}
+
+#restoreOriginal:hover {
+  background-color: #616161;
+}
+
+#restoreOriginal:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button.active {
+  background-color: #388e3c;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.translator-panel {
+  height: auto !important;
+  max-height: none !important;
+}
+
+.cache-controls {
+  display: flex;
+  gap: 8px;
+  /* margin-bottom: 12px; */
+}
+
+.secondary-button {
+  background-color: #757575;
+  font-size: 11px;
+  padding: 4px 6px;
+  height: 24px;
+  border-radius: 3px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.secondary-button:hover {
+  background-color: #616161;
+  opacity: 1;
+}
+
+.secondary-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.primary-button {
+  background-color: #2196f3;
+}
+
+.primary-button:hover {
+  background-color: #1976d2;
+}
+
+.danger-button {
+  background-color: #f44336;
+}
+
+.danger-button:hover {
+  background-color: #d32f2f;
+}
+
+button.stop-translate {
+  background-color: #f44336;
+}
+
+button.stop-translate:hover {
+  background-color: #d32f2f;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.settings-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.settings-link:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .panel-title {
+    color: #fff;
+  }
+
+  .settings-link {
+    color: #81c784;
+  }
+
+  .settings-link:hover {
+    background-color: rgba(129, 199, 132, 0.1);
+  }
+}
+
+/* 缓存清除消息样式 */
+.cache-clear-message {
+  position: absolute;
+  /* bottom: -30px; */
+  /* 在最底部显示 */
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
+  animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

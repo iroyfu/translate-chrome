@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI 翻译助手设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI 翻译助手设置</h1>
+      <div class="form-group">
+        <label for="apiEndpoint">API 接口地址:</label>
+        <input
+          type="text"
+          id="apiEndpoint"
+          placeholder="例如: https://api.openai.com/v1/chat/completions"
+        />
+      </div>
+      <div class="form-group">
+        <label for="apiKey">API 密钥:</label>
+        <div class="input-group">
+          <input type="password" id="apiKey" />
+          <button id="toggleApiKey" class="toggle-btn">
+            <span class="eye-icon">👁️</span>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="model">模型名称:</label>
+        <input type="text" id="model" placeholder="例如: gpt-3.5-turbo" />
+      </div>
+
+      <div class="form-group">
+        <label>System Prompts 设置:</label>
+        <div class="prompt-selector">
+          <select id="promptType">
+            <option value="selection">快速划词翻译</option>
+            <option value="advancedSelection">
+              高级划词翻译(别改JSON结构)
+            </option>
+            <option value="window">小窗翻译</option>
+            <option value="page">整页翻译</option>
+          </select>
+        </div>
+        <div class="prompt-editor">
+          <div class="prompt-tips">
+            <p>提示：在提示词中使用 {LANG} 来表示目标语言，例如：</p>
+            <p class="example">
+              你是一个翻译助手。请将用户输入的文本翻译成{LANG}，保持原文的格式和风格。只返回翻译结果，不需要解释。
+            </p>
+          </div>
+          <textarea
+            id="promptContent"
+            placeholder="请输入system prompt"
+          ></textarea>
+        </div>
+      </div>
+      
+      <!-- 快捷键设置 -->
+      <div class="form-group">
+        <label>快捷键设置:</label>
+        <div class="shortcut-setting">
+          <div class="shortcut-item">
+            <label for="shortcutCompareTranslate">流式对比翻译:</label>
+            <input 
+              type="text" 
+              id="shortcutCompareTranslate" 
+                placeholder="Ctrl+Shift+C"
+            />
+            <button class="record-button" data-target="shortcutCompareTranslate">录制快捷键</button>
+            <div class="format-hint">再次按相同快捷键可恢复原文</div>
+          </div>
+          <div class="shortcut-item">
+            <label for="shortcutReplaceTranslate">流式替换翻译:</label>
+            <input 
+              type="text" 
+              id="shortcutReplaceTranslate" 
+                placeholder="Ctrl+Shift+R"
+            />
+            <button class="record-button" data-target="shortcutReplaceTranslate">录制快捷键</button>
+            <div class="format-hint">再次按相同快捷键可恢复原文</div>
+          </div>
+          <div class="prompt-tips">
+            <p>提示：点击「录制快捷键」后，按下想要设置的任意快捷键组合即可。支持Ctrl、Alt、Shift、Meta等修饰键与普通键的组合。</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="save">保存设置</button>
+      <div id="status"></div>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
